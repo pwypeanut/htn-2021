@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/server.js"></script>
+        <script>
+
+        </script>
+        <style>
+            @import 'https://fonts.googleapis.com/css?family=Rubik+One';
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('/assets/bg.png');
+                font-family: 'Rubik One', sans-serif;
+                color: white;
+                font-size: 30px;
+            }
+            .container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .room-container {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function getUrlParameters(parameter, staticURL, decode){
+
+                var currLocation = (staticURL.length)? staticURL : window.location.search,
+                parArr = currLocation.split("?")[1].split("&"),
+                returnBool = true;
+
+                for(var i = 0; i < parArr.length; i++){
+                    parr = parArr[i].split("=");
+                    if(parr[0] == parameter){
+                        return (decode) ? decodeURIComponent(parr[1]) : parr[1];
+                        returnBool = true;
+                    }else{
+                        returnBool = false;            
+                    }
+                }
+                if(!returnBool) return false;  
+            }
+            $(document).ready(function() {
+                var url = window.location.href;
+                var roomID = parseInt(getUrlParameters("roomID", url, true));
+                serverListen(roomID + 1, function(obj) {
+                    if (obj["type"] == "handshake") {
+                        window.location.href = "/game.html?roomID=" + roomID + "&player=2&level=1";
+                    }
+                });
+                serverPush(roomID, {
+                    type: "handshake",
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="room-container">
+                Cannot find room.
+            </div>
+        </div>
+    </body>
+</html>

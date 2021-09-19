@@ -3,7 +3,7 @@
     
     $roomID = $_GET["roomID"];
 
-    for ($i = 0; $i < 200; $i++) {
+    for ($i = 0; $i < 30; $i++) {
         // Check if room is active
         $checkActiveQuery = $conn->prepare("SELECT roomID FROM active_rooms WHERE roomID = ?");
         $checkActiveQuery->bind_param("i", $roomID);
@@ -23,18 +23,22 @@
             $infoResult = $infoQuery->get_result();
 
             $result = [];
+            $maxTs = 0;
             while ($row = $infoResult->fetch_assoc()) {
                 array_push($result, $row);
+                if ($row["timestamp"] > $maxTs) {
+                    $maxTs = $row["timestamp"];
+                }
             }
 
             // Delete new infos
-            $delInfoQuery = $conn->prepare("DELETE FROM room_infos WHERE roomID = ?");
-            $delInfoQuery->bind_param("i", $roomID);
+            $delInfoQuery = $conn->prepare("DELETE FROM room_infos WHERE roomID = ? AND `timestamp` <= ?");
+            $delInfoQuery->bind_param("id", $roomID, $maxTs);
             $delInfoQuery->execute();
             echo json_encode($result);
             die();
         }
-        usleep(100000);
+        usleep(30000);
     }
     echo json_encode([]);
 ?>

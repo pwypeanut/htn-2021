@@ -3,11 +3,11 @@
     
     $roomID = $_GET["roomID"];
     $info = $_GET["info"];
-    $timestamp = (new DateTime())->getTimestamp();
+    $timestamp = microtime(true);
 
     // Insert info into message table
     $msgQuery = $conn->prepare("INSERT INTO room_infos(roomID, `timestamp`, `message`) VALUES(?, ?, ?)");
-    $msgQuery->bind_param("iis", $roomID, $timestamp, $info);
+    $msgQuery->bind_param("ids", $roomID, $timestamp, $info);
     $msgQuery->execute();
 
     // Check if room already active

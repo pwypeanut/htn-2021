@@ -16,7 +16,7 @@ function longPoll(roomID) {
         roomHandlers[roomID].forEach(function(handler) {
             var result = JSON.parse(res);
             result.forEach(function(row) {
-                handler(row);
+                handler(JSON.parse(row.message));
             });
         });
         longPoll(roomID);

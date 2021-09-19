@@ -1,0 +1,12 @@
+body {
+    margin: 20px !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    margin: 20px;
+    font-family: 'Nunito', sans-serif;
+}

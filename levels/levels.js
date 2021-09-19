@@ -1,0 +1,473 @@
+// template level (all blocks)
+var template = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_1_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaabaaaaa
+saaaaaoaaaaaaabaaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_1_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaabaaaaaaaaaaaaa
+saaaaabaaaaaaaaoaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_2_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwaabaaa
+wwwwwwwwwwwwwwaabaae
+wwwwwwwwwwaabaaawwww
+wwwwwwwwwwaabaoawwww
+wwwwaaabaaaawwwwwwww
+wwwwaaaboaaawwwwwwww
+aaaaaawwwwwwwwwwwwww
+saoaaawwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_2_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwaoaaaa
+wwwwwwwwwwwwwwaaaaae
+wwwwwwwwwwaaabaawwww
+wwwwwwwwwwoaabaawwww
+wwwwaaaaaabawwwwwwww
+wwwwaaaaaabawwwwwwww
+aaaabawwwwwwwwwwwwww
+saaabowwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_3_1 = `
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaabaaaaaaaaaaa
+saaaaaaabaaaaaoaaaaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaaaabaaaaabaa
+aaaaaaaaaaabaaaaabaa
+oawwwwwwwwwwwwwwwwww
+aawwwwwwwwwwwwwwwwww
+aawwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaabaaaaaa
+aaaaaaaaaaaaabaaaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_3_2 = `
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaoaaabaa
+saaaaoaaaaaaaaaaabaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaoaaaaaa
+aawwwwwwwwwwwwwwwwww
+aawwwwwwwwwwwwwwwwww
+bbwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaoaaaaaaaaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_4_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaadaaa
+saaooaaaaaaaaaaadaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_4_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaadaaaaooaaaaaaa
+saaaaadaaaaaaaaaaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_5_1 = `
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaabaaaaaaaaaa
+saaaaaaaabaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaabaaaaaaaaaa
+aaaaaaaaabaaaaaaaaaa
+aawwwwwwwwwwwwwwwwww
+aaaaaaaaadaaaaaaaaaa
+aaaaaaaaadaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaadaaaaaaaaaa
+eaaaaaaaadaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_5_2 = `
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+saaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+oaaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaao
+eaaaaaaaaaaaaaaaaaao
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_6_1 = `
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+saaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+oaaaaaaaaaaaaaaaaaao
+wwwwwwwwaaawwwwwwwww
+aaaaaaaaaaaaaaaaaaao
+eaaaaaaaaaaaaaaaaaao
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_6_2 = `
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaabaaaaaaaaaa
+saaaaaaaabaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaabaaaaaaaaaa
+aaaaaaaaabaaaaaaaaaa
+aawwwwwwwwwwwwwwwwww
+aaaaaaaaadaaaaaaaaaa
+aaaaaaaaadaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwaa
+aaaaaaaaadaaaaaaaaaa
+eaaaaaaaadaaaaaaaaaa
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_7_1 = 
+`
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaae
+aaaaaaaaaawwwwwwwwww
+aaaaaaaaaawwwwwwwwww
+saacaaaaaawwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_7_2 = 
+`
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaae
+aaaaaaaaaawwwwwwwwww
+aaaaaaaaaawwwwwwwwww
+saacaaaaaawwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_8_1 = `
+aaaaaaaaaaaaaawwwwww
+aaaaaaaaaaaaaawwwwww
+saaacaaaaaaaaowwwwww
+wwwwwaaaaaaaawwwwwww
+wwwwwaaaaaaaaawwwwww
+wwwwwoaaaaaaaawwwwww
+wwwwwwaaaaaaaawwwwww
+wwwwwaaaawaaaawwwwww
+wwwwwaaaaaaaaowwwwww
+wwwwwaaaaaaaawwwwwww
+wwwwwoaaaaaaaaadadaa
+wwwwwaaaaaaaaaadadae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_8_2 = `
+aaaaaaaaaaaaaawwwwww
+aaaaaaaaaaaaaawwwwww
+saaacaaaaaaaaowwwwww
+wwwwwaaaaaaaawwwwwww
+wwwwwaaaaaaaaawwwwww
+wwwwwoaaaaaaaawwwwww
+wwwwwwaaaaaaaawwwwww
+wwwwwaaaawaaaawwwwww
+wwwwwaaaaaaaaowwwwww
+wwwwwaaaaaaaawwwwwww
+wwwwwoaaaaaaaaadadaa
+wwwwwaaaaaaaaaadadae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_9_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaataaaa
+saoooaaaaaaaaaataaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`;
+
+var level_9_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaataaaoooaaaaaaa
+saaaaataaaaaaaaaaaae
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_10_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaoooaaaaaaaaaaaaaa
+saaaaaaaaaaaaaaaaaae
+wwwwwwwaaawwwwwwwwww
+wwwwwwwaaawwwwwwwwww
+wwwwwwwaaawwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_10_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaataaaaaaaaaaa
+saaaaaaataaaaaaaaaae
+wwwwwwaabaawwwwwwwww
+wwwwwwaaaaawwwwwwwww
+wwwwwwaaaaawwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_11_1 = level_10_2;
+var level_11_2 = level_10_1;
+
+var level_12_1 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaaaaa
+soaaaaaaaaaaaaaaaaae
+wwaaaaaaaaaaaaaaawww
+wwaaaaaaaaaaaaaaawww
+wwaaaaaaaaaaaaaaawww
+wwaaaaaaaaaaaaaaawww
+wwaaaaaaaaaaaaaaawww
+wwaaaaaaaaaaaaaaawww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_12_2 = `
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+aaaaaaaaaaaaaaaaabaa
+saaaaaaaaaaaaaaaabae
+wwaaaaaaaaaaaaaaawww
+wwaacaacaacaacaaawww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_13_1 = level_12_2;
+var level_13_2 = level_12_1;
+
+var level_14_1 = `
+wwwwwwwwbbbbdbtaaaaa
+wwwwwwwwdddbdtbaaaae
+ooooowwwdbbbbtbwwwww
+ooooowwwttdtdbdwwwww
+ooooowwwdbbcdtbwwwww
+oowoowwwtbtdbtdwwwww
+ooooowwwdbbbtbtwwwww
+oooowwwwbbtdbdbwwwww
+woooowwwdbdctdbwwwww
+oowoowwwdbtdbtdwwwww
+oooowaaadbbtbdtwwwww
+aaaaaaaadbtdbdbwwwww
+sawaaaaatdbdbtdwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_14_2 = level_14_1;
+
+var level_15_1 = `
+aaaaaaaatetaaaaaaaaa
+aaaaaaaatttaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaoaaaaaaaaaaoaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaoaaaaaaaaaaoaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+saaaaaaccccccccccccc
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+var level_15_2 = `
+aaaaaaaatetaaaaaaaaa
+aaaaaaaatttaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaoaaaaaaaaaaoaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaoaaaaaaaaaaoaaaa
+aaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaa
+saaaaaaccccccccccccc
+wwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwww
+`
+
+
+var levels = {
+    level_1_1, level_1_2,
+    level_2_1, level_2_2,
+    level_3_1, level_3_2,
+    level_4_1, level_4_2,
+    level_5_1, level_5_2,
+    level_6_1, level_6_2,
+    level_7_1, level_7_2,
+    level_8_1, level_8_2,
+    level_9_1, level_9_2,
+    level_10_1, level_10_2,
+    level_11_1, level_11_2,
+    level_12_1, level_12_2,
+    level_13_1, level_13_2,
+    level_14_1, level_14_2,
+    level_15_1, level_15_2,
+};
