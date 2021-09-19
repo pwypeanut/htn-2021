@@ -95,7 +95,7 @@ function preload() {
 }
 
 var won = false;
-var wins = 0;
+var otherWin = false;
 var MAX_LEVEL = Object.keys(levels).length / 2;
 
 function nextLevel() {
@@ -113,10 +113,9 @@ function reachGoal() {
         serverPush(roomID + playerNo - 1, {
             type: "win",
         });
-        wins += 1;
         sounds2['win'].play();
-        if (wins == 2) {
-            nextLevel();
+        if (otherWin) {
+            setTimeout(nextLevel, 500);
         }
     }
 }
@@ -348,8 +347,8 @@ window.onload = function () {
             }
         }
         if (obj.type == "win") {
-            wins++;
-            if (wins == 2) {
+            otherWin = true;
+            if (won) {
                 nextLevel();
             }
         }
